@@ -1,15 +1,29 @@
-import styles from './header.module.css'
+import {
+  Container,
+  Space,
+  Menus,
+  LogoType,
+  Searcher,
+  SpaceUser
+} from './styles'
+import {} from '@ant-design/icons'
 import { Input } from 'antd'
-const { Search } = Input
 
 export default function Headers() {
   return (
-    <div className={styles.header}>
-      <Search
-        placeholder="input search text"
-        onSearch={() => {}}
-        className={styles.search}
-      />
-    </div>
+    <Container>
+      <Space>
+        <LogoType />
+        <Searcher>
+          <Input.Search
+            allowClear
+            size="large"
+            placeholder="Digite o que procura aqui..."
+          />
+        </Searcher>
+        <SpaceUser>Espaço do usuário</SpaceUser>
+      </Space>
+      <Menus>asd</Menus>
+    </Container>
   )
 }
